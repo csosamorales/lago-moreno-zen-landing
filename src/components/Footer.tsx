@@ -6,10 +6,10 @@ import { FaInstagram } from 'react-icons/fa6';
 export default function Footer() {
 	return (
 		<footer className="bg-surface text-black">
-			<div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
+			<div className="max-w-7xl mx-auto py-6 px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
 				{/* Left */}
-				<div>
-					<p className="uppercase tracking-widest text-xl font-bold mb-2">
+				<div className="flex flex-col items-center md:items-start gap-2">
+					<p className="uppercase tracking-widest text-md font-bold">
 						Ponete en contacto
 					</p>
 					<div className="flex flex-row items-center gap-1 text-brown-dark">
@@ -37,7 +37,7 @@ export default function Footer() {
 
 				{/* Right */}
 				<div className="flex flex-col items-center md:items-end gap-2">
-					<p className="uppercase tracking-widest text-xl font-bold mb-2">
+					<p className="uppercase tracking-widest text-md font-bold">
 						Seguinos!
 					</p>
 					<div className="flex gap-4 text-brown-dark">

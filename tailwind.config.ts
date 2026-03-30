@@ -9,15 +9,15 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				beige: '#f2ece2', //grey
+				beige: '#f2ece2', //grey / dawn-pink
 				'beige-dark': '#e3d9c8',
-				brown: '#6b4f35',
-				'brown-dark': '#3e2c1c',
-				gold: '#b08850',
-				'gold-light': '#d4aa72',
+				brown: '#6b4f35', //shingle-fawn
+				'brown-dark': '#3e2c1c', //black-marlin
+				gold: '#b08850', //driftwood
+				'gold-light': '#d4aa72', //whiskey / 64
 				cream: '#faf8f4',
-				ink: '#2e2318', // 14
-				surface: '#E2D6BF',
+				ink: '#2e2318', // 14 / Oil
+				surface: '#E2D6BF', //beige
 			},
 			fontFamily: {
 				raleway: ['var(--font-raleway)', 'sans-serif'],
