@@ -1,101 +1,204 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import SectionLabel from '@/components/SectionLabel'
+import ApartmentCard from '@/components/ApartmentCard'
 
-export default function Home() {
+const apartments = [
+  {
+    slug: 'zen-i',
+    name: 'ZEN I',
+    badge: 'Departamento premium',
+    description: 'Amplio departamento con vistas al lago y la montaña, ideal para familias o grupos. Luminoso, cálido y completamente equipado.',
+    specs: '5 personas · 1 hab · 1 baño',
+    amenities: ['WiFi', 'TV LED', 'Calefacción', 'Cocina equipada'],
+    variant: 'featured' as const,
+  },
+  {
+    slug: 'zen-ii',
+    name: 'ZEN II',
+    badge: 'Departamento',
+    description: 'Acogedor espacio con acceso a jardín y vistas al bosque. Perfecto para parejas o familias pequeñas.',
+    specs: '4 personas · 1 hab · 1 baño',
+    amenities: ['WiFi', 'TV LED', 'Jardín'],
+    variant: 'normal' as const,
+  },
+  {
+    slug: 'zen-iii',
+    name: 'ZEN III',
+    badge: 'Departamento',
+    description: 'Confortable departamento con terraza privada y vista al bosque nativo patagónico.',
+    specs: '4 personas · 1 hab · 1 baño',
+    amenities: ['WiFi', 'Terraza', 'Calefacción'],
+    variant: 'normal' as const,
+  },
+  {
+    slug: 'mono-zen',
+    name: 'MONO ZEN',
+    badge: 'Monoambiente',
+    description: 'Moderno monoambiente ideal para parejas que buscan comodidad y privacidad en un entorno natural único.',
+    specs: '2 personas · Estudio · 1 baño',
+    amenities: ['WiFi', 'TV LED', 'Diseño moderno'],
+    variant: 'featured' as const,
+  },
+  {
+    slug: 'zen-iv',
+    name: 'ZEN IV',
+    badge: 'Departamento superior',
+    description: 'Nuestro departamento más grande, con amplio living, dos habitaciones y una terraza panorámica con vistas inigualables al lago y los cerros.',
+    specs: '6 personas · 2 hab · 2 baños',
+    amenities: ['WiFi', 'TV LED', 'Terraza panorámica', 'Doble baño', 'Calefacción central'],
+    variant: 'horizontal' as const,
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* HERO */}
+      <section
+        id="inicio"
+        className="relative h-screen flex flex-col items-center justify-center text-center px-6"
+        style={{ background: 'linear-gradient(135deg, #2a1f14 0%, #6b8c6e 100%)' }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 pointer-events-none" />
+
+        <div className="relative z-10 flex flex-col items-center gap-6 max-w-2xl">
+          <p className="uppercase tracking-widest text-[10px] font-bold text-gold">Bariloche · Patagonia Argentina</p>
+          <h1 className="text-white text-4xl md:text-6xl font-light tracking-widest">LAGO MORENO ZEN</h1>
+          <p className="text-white/80 text-sm md:text-base leading-relaxed">
+            Departamentos vacacionales a 200 metros del lago, rodeados de la naturaleza patagónica.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center mt-2">
+            <a href="#departamentos" className="bg-gold hover:bg-gold-light text-white px-6 py-3 text-xs uppercase tracking-widest transition-colors">
+              Ver departamentos
+            </a>
+            <a
+              href="https://wa.me/5492944428762"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white text-white hover:border-gold hover:text-gold px-6 py-3 text-xs uppercase tracking-widest transition-colors"
+            >
+              Consultar disponibilidad
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-white/50 text-[10px] uppercase tracking-widest">Scroll</span>
+          <div className="w-0.5 h-8 bg-white/30" />
+        </div>
+      </section>
+
+      {/* APARTMENTS */}
+      <section id="departamentos" className="bg-cream py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <SectionLabel>Nuestros espacios</SectionLabel>
+              <h2 className="text-3xl md:text-4xl font-light text-ink leading-snug mt-2">
+                Descubrí nuestros<br />departamentos
+              </h2>
+            </div>
+            <div className="flex items-end">
+              <p className="text-ink/70 text-sm leading-relaxed">
+                Cada departamento fue diseñado para brindar una experiencia única en contacto con la naturaleza patagónica.
+                A pocos metros del Lago Moreno y con acceso a todos los puntos turísticos de Bariloche.
+              </p>
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="flex flex-col gap-[2px]">
+            {/* Row 1 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+              <ApartmentCard {...apartments[0]} />
+              <ApartmentCard {...apartments[1]} />
+            </div>
+            {/* Row 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+              <ApartmentCard {...apartments[2]} />
+              <ApartmentCard {...apartments[3]} />
+            </div>
+            {/* Row 3 */}
+            <div className="grid grid-cols-1 gap-[2px]">
+              <ApartmentCard {...apartments[4]} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES STRIP */}
+      <section id="comodidades" className="bg-brown-dark py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
+            {[
+              {
+                title: 'Maravillosa Ubicación',
+                text: 'A solo 200 metros del Lago Moreno, km 13. Rodeados de naturaleza patagónica y a minutos de los principales atractivos.',
+              },
+              {
+                title: 'Totalmente Equipados',
+                text: 'Conexión Wifi, TV LED, ropa blanca y equipamiento completo de cocina en todos nuestros departamentos.',
+              },
+              {
+                title: 'Consultas y Reservas',
+                text: 'Podés consultar la disponibilidad de cada departamento por la web o WhatsApp. Respuesta rápida garantizada.',
+              },
+            ].map((f) => (
+              <div key={f.title} className="px-8 py-10 text-center">
+                <h3 className="text-white font-semibold mb-3">{f.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIAL */}
+      <section className="bg-beige py-16 text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <SectionLabel>Lo que dicen de nosotros</SectionLabel>
+          <blockquote className="text-ink text-xl md:text-2xl font-light italic mt-6 leading-relaxed">
+            &ldquo;Hermoso hospedaje, súper cálido y cómodo con vistas increíbles&rdquo;
+          </blockquote>
+          <p className="text-ink/50 text-xs mt-4">— Huésped verificado</p>
+        </div>
+      </section>
+
+      {/* LOCATION PREVIEW */}
+      <section id="ubicacion" className="bg-cream py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-2xl mb-10">
+            <SectionLabel>Dónde estamos</SectionLabel>
+            <h2 className="text-2xl md:text-3xl font-light text-ink mt-2 leading-snug">
+              Ubicación ideal para recorrer todos los puntos turísticos de Bariloche,{' '}
+              <span className="text-ink/60 text-xl">a solo 200 metros de la Playa del Viento.</span>
+            </h2>
+          </div>
+
+          {/* Map placeholder */}
+          <div
+            className="w-full bg-beige-dark flex items-center justify-center"
+            style={{ aspectRatio: '16/9' }}
+          >
+            <span className="text-ink/40 text-sm uppercase tracking-widest">Google Maps – Av. Bustillo km 13</span>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link href="/ubicacion" className="bg-brown-dark text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-brown transition-colors">
+              Ver más sobre la ubicación
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
 }
