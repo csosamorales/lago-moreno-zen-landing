@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const images = [
-	'/hero-background/background-2.webp',
+	// '/hero-background/background-2.webp',
 	// '/hero-background/background-3.webp',
 	// '/hero-background/background-4.webp',
-	// '/hero-background/background-5.webp',
+	'/hero-background/background-5.webp',
 ];
 
 const INTERVAL_MS = 5000;
@@ -44,6 +44,7 @@ export default function HeroSlider() {
 					}}
 				/>
 			))}
+			<div className="absolute inset-0 backdrop-blur-sm" />
 		</div>
 	);
 }
