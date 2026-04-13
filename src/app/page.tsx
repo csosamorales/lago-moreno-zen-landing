@@ -5,6 +5,7 @@ import SectionLabel from '@/components/SectionLabel';
 import ApartmentCard from '@/components/ApartmentCard';
 import HeroSlider from '@/components/HeroSlider';
 import Image from 'next/image';
+import Button from '@/components/ui/Button';
 
 const apartments = [
 	{
@@ -73,7 +74,7 @@ export default function HomePage() {
 			{/* HERO */}
 			<section
 				id="inicio"
-				className="relative h-screen flex flex-col items-center justify-center text-center px-6"
+				className="relative h-[80lvh] flex flex-col items-center justify-center text-center px-6"
 			>
 				<HeroSlider />
 				{/* Overlay */}
@@ -102,30 +103,28 @@ export default function HomePage() {
 						Departamentos frente al lago  ·  Av. Bustillo km 13
 					</p>
 					<div className="flex flex-wrap gap-4 justify-center mt-2">
-						<a
-							href="#departamentos"
-							className="bg-gold hover:bg-gold-light text-white px-6 py-3 text-xs uppercase tracking-widest transition-colors"
-						>
-							Ver departamentos
-						</a>
-						<a
-							href="https://wa.me/5492944428762"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="border border-white text-white hover:border-gold hover:text-gold px-6 py-3 text-xs uppercase tracking-widest transition-colors"
-						>
-							Consultar disponibilidad
-						</a>
+						<Button>
+							<a href="#departamentos">Ver departamentos</a>
+						</Button>
+						<Button variant="outline">
+							<a
+								href="https://wa.me/5492944428762"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Consultar disponibilidad
+							</a>
+						</Button>
 					</div>
 				</div>
 
 				{/* Scroll indicator */}
-				<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-					<span className="text-white/50 text-[10px] uppercase tracking-widest">
+				{/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+					<span className="text-white/50 text-xxs uppercase tracking-widest">
 						Scroll
 					</span>
 					<div className="w-0.5 h-8 bg-white/30" />
-				</div>
+				</div> */}
 			</section>
 
 			{/* APARTMENTS */}
