@@ -80,7 +80,7 @@ export default function MiniCalendar({ takenDates = [] }: MiniCalendarProps) {
 				{WEEKDAYS.map((d, i) => (
 					<div
 						key={i}
-						className="text-center text-[10px] font-bold text-ink/50 pb-1"
+						className="text-center text-xxs font-bold text-ink/50 pb-1"
 					>
 						{d}
 					</div>

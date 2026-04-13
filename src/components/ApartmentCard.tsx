@@ -26,7 +26,7 @@ export default function ApartmentCard({
 				<PhotoPlaceholder className="w-full min-h-[280px]" />
 				<div className="p-8 flex flex-col justify-between flex-1">
 					<div>
-						<span className="uppercase tracking-widest text-[10px] font-bold text-gold">
+						<span className="uppercase tracking-widest text-xxs font-bold text-gold">
 							{badge}
 						</span>
 						<h3 className="text-2xl font-semibold text-ink mt-1 mb-3">
@@ -40,7 +40,7 @@ export default function ApartmentCard({
 							{amenities.map((a) => (
 								<span
 									key={a}
-									className="text-[10px] uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
+									className="text-xxs uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
 								>
 									{a}
 								</span>
@@ -72,7 +72,7 @@ export default function ApartmentCard({
 				<PhotoPlaceholder className="w-full md:w-1/2 min-h-[280px]" />
 				<div className="p-8 flex flex-col justify-between flex-1">
 					<div>
-						<span className="uppercase tracking-widest text-[10px] font-bold text-gold">
+						<span className="uppercase tracking-widest text-xxs font-bold text-gold">
 							{badge}
 						</span>
 						<h3 className="text-2xl font-semibold text-ink mt-1 mb-3">
@@ -86,7 +86,7 @@ export default function ApartmentCard({
 							{amenities.map((a) => (
 								<span
 									key={a}
-									className="text-[10px] uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
+									className="text-xxs uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
 								>
 									{a}
 								</span>
@@ -118,7 +118,7 @@ export default function ApartmentCard({
 			<PhotoPlaceholder className="w-full h-48" />
 			<div className="p-6 flex flex-col flex-1 justify-between">
 				<div>
-					<span className="uppercase tracking-widest text-[10px] font-bold text-gold">
+					<span className="uppercase tracking-widest text-xxs font-bold text-gold">
 						{badge}
 					</span>
 					<h3 className="text-xl font-semibold text-ink mt-1 mb-2">
@@ -132,7 +132,7 @@ export default function ApartmentCard({
 						{amenities.map((a) => (
 							<span
 								key={a}
-								className="text-[10px] uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
+								className="text-xxs uppercase tracking-widest border border-gold/40 text-gold px-2 py-1"
 							>
 								{a}
 							</span>

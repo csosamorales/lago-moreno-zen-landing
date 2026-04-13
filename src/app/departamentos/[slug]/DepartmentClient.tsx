@@ -78,7 +78,7 @@ export default function DepartmentClient({
 				<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
 					{/* Left */}
 					<div className="lg:col-span-2">
-						<span className="uppercase tracking-widest text-[10px] font-bold text-gold">
+						<span className="uppercase tracking-widest text-xxs font-bold text-gold">
 							{apartment.badge}
 						</span>
 						<h1 className="text-3xl font-semibold text-ink mt-1 mb-2">
