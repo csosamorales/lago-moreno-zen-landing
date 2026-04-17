@@ -112,7 +112,7 @@ export default function RecursosPlanificar() {
 				<SectionLabel>Información útil</SectionLabel>
 
 				{/* Heading */}
-				<h2 className="mb-12 font-raleway text-[2rem] leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
+				<h2 className="mb-12 font-raleway text-3xl leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
 					<span className="font-light">Recursos para </span>
 					<span className="font-bold">planificar</span>
 					<br />

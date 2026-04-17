@@ -78,11 +78,11 @@ const destinos: DestinoCardProps[] = [
 export default function GrandesDestinos() {
 	return (
 		<section className="px-8 pb-20 pt-16 md:px-8 lg:px-8">
-			<div className="mx-auto max-w-[1100px]">
+			<div className="mx-auto max-w-6xl">
 				<SectionLabel>Explorá la región</SectionLabel>
 
 				{/* Heading */}
-				<h2 className="mb-10 font-raleway text-[2rem] leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
+				<h2 className="mb-10 font-raleway text-3xl leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
 					<span className="font-light">Los </span>
 					<span className="font-bold">grandes destinos</span>
 					<br />

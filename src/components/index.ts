@@ -7,5 +7,6 @@ export { default as Carousel } from './Carousel';
 export { default as Lightbox } from './Lightbox';
 export { default as GalleryModal } from './GalleryModal';
 export { default as MiniCalendar } from './MiniCalendar';
+export { default as Highlight } from './ui/Highlight';
 export { default as BusRoute } from '../app/ubicacion/BusLine';
 export { default as Distancias } from '../app/ubicacion/Distancias';

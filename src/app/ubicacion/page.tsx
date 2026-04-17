@@ -42,7 +42,7 @@ export default function UbicacionPage() {
 
 							{/* Heading */}
 							<div className="mb-8">
-								<h1 className="font-raleway text-[2rem] leading-[1.3] tracking-[0.02em] text-dawn-pink sm:text-[2.4rem] lg:text-[2.4rem]">
+								<h1 className="font-raleway text-3xl leading-[1.3] tracking-[0.02em] text-dawn-pink sm:text-[2.4rem] lg:text-[2.4rem]">
 									<span className="font-light">
 										Moverse en Bariloche{'\n'}es{' '}
 									</span>

@@ -1,4 +1,4 @@
-import { SectionLabel } from '@/components';
+import { Highlight, SectionLabel } from '@/components';
 import React from 'react';
 
 interface TransportCardProps {
@@ -13,7 +13,7 @@ function TransportCard({ title, children, badge }: TransportCardProps) {
 			<p className="font-raleway text-sm font-bold uppercase tracking-[1.04px] text-marlin">
 				{title}
 			</p>
-			<div className="font-raleway text-sm leading-[24px] opacity-[0.72]">
+			<div className="font-raleway text-sm leading-6 opacity-[0.72]">
 				{children}
 			</div>
 			<div className="inline-flex">
@@ -27,11 +27,11 @@ function TransportCard({ title, children, badge }: TransportCardProps) {
 
 export default function ComoLlegar() {
 	return (
-		<div className="mx-auto max-w-[1100px]">
+		<div className="mx-auto max-w-6xl">
 			<SectionLabel>Cómo llegar</SectionLabel>
 
 			{/* Heading */}
-			<h1 className="mb-10 font-raleway text-[2rem] leading-[1.3] tracking-[0.02em] text-oil sm:text-[2.4rem]">
+			<h1 className="mb-10 font-raleway text-3xl leading-[1.3] tracking-[0.02em] text-oil sm:text-[2.4rem]">
 				<span className="font-light">Llegá </span>
 				<span className="font-bold">sin complicaciones</span>
 				<br />
@@ -48,19 +48,14 @@ export default function ComoLlegar() {
 					>
 						<p className="text-oil">
 							El Aeropuerto Internacional se encuentra a{' '}
-							<span className="font-semibold text-shingle-fawn">
-								14 km del centro
-							</span>{' '}
-							y a{' '}
-							<span className="font-semibold text-shingle-fawn">
-								27 km de nuestros departamentos
-							</span>
+							<Highlight>14 km del centro</Highlight> y a{' '}
+							<Highlight>
+								30 km de nuestros departamentos
+							</Highlight>
 							. En remis o taxi el viaje dura aproximadamente{' '}
-							<span className="font-semibold text-shingle-fawn">
-								20–30 minutos
-							</span>
-							. Remises AutoJet tiene mostrador en el sector de
-							arribos de planta baja.
+							<Highlight>40–50 minutos</Highlight>. Podes tomar un
+							remise o taxi. También existe la posibilidad de{' '}
+							<Highlight>Uber, Didi y Cabify</Highlight> .
 						</p>
 					</TransportCard>
 
@@ -69,24 +64,12 @@ export default function ComoLlegar() {
 						badge="Av. Bustillo km 13"
 					>
 						<p className="text-oil">
-							Tomá la{' '}
-							<span className="font-semibold text-shingle-fawn">
-								Av. Bustillo
-							</span>{' '}
-							desde el centro en dirección oeste. A los{' '}
-							<span className="font-semibold text-shingle-fawn">
-								13 km
-							</span>{' '}
-							encontrás nuestro complejo, con{' '}
-							<span className="font-semibold text-shingle-fawn">
-								estacionamiento privado
-							</span>{' '}
-							incluido para todos los departamentos. También
-							disponemos de{' '}
-							<span className="font-semibold text-shingle-fawn">
-								Uber y Cabify
-							</span>{' '}
-							desde el aeropuerto y el centro.
+							Tomá la <Highlight>Av. Bustillo</Highlight> desde el
+							centro en dirección oeste. A los{' '}
+							<Highlight>13 km</Highlight> encontrás nuestro
+							complejo, con{' '}
+							<Highlight>estacionamiento privado</Highlight>{' '}
+							incluido para todos los departamentos.
 						</p>
 					</TransportCard>
 
@@ -95,24 +78,27 @@ export default function ComoLlegar() {
 						badge="Líneas 20 / 21 / 22"
 					>
 						<p className="text-oil">
-							El servicio lo opera{' '}
-							<span className="font-semibold text-shingle-fawn">
-								Mi Bus
-							</span>
-							, empresa de transporte urbano. Se abona con{' '}
-							<span className="font-semibold text-shingle-fawn">
-								tarjeta SUBE
-							</span>{' '}
-							(disponible en quioscos y en el Centro Cívico). Las
-							líneas{' '}
-							<span className="font-semibold text-shingle-fawn">
-								20, 21 y 22
-							</span>{' '}
-							recorren la Av. Bustillo con frecuencia de{' '}
-							<span className="font-semibold text-shingle-fawn">
-								30 minutos
-							</span>
-							, pasando frente al complejo en km 13.
+							El servicio lo opera <Highlight>Mi Bus</Highlight>,
+							empresa de transporte urbano. Se abona con{' '}
+							<Highlight>tarjeta SUBE</Highlight> (disponible en
+							quioscos y en el Centro Cívico). Las líneas{' '}
+							<Highlight>20, 21 y 22</Highlight> recorren la Av.
+							Bustillo con frecuencia de{' '}
+							<Highlight>30 minutos</Highlight>, pasando frente al
+							complejo en km 13. Si llegaste al aeropuerto, para
+							poder llegar al centro de la ciudad está la línea{' '}
+							<Highlight>72</Highlight>, podes consultar los
+							horarios{' '}
+							<Highlight>
+								<a
+									href="https://bariloche.org/horario-omnibus-linea-72/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<u>acá</u>
+								</a>
+							</Highlight>
+							.
 						</p>
 					</TransportCard>
 				</div>

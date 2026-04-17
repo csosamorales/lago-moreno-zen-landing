@@ -52,7 +52,7 @@ export default function Distancias() {
 				<div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-16">
 					{/* Left: heading + body copy */}
 					<div className="flex flex-col gap-6 lg:w-[380px] lg:flex-shrink-0">
-						<h2 className="font-raleway text-[2rem] leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
+						<h2 className="font-raleway text-3xl leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
 							<span className="font-light">Todo </span>
 							<span className="font-bold">cerca</span>
 							<span className="font-light">,</span>
