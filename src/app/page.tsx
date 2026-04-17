@@ -128,7 +128,7 @@ export default function HomePage() {
 			</section>
 
 			{/* APARTMENTS */}
-			<section id="departamentos" className="bg-cream py-24">
+			<section id="departamentos" className="bg-surface py-24">
 				<div className="max-w-5xl mx-auto px-6">
 					{/* Header */}
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -244,12 +244,11 @@ export default function HomePage() {
 					</div>
 
 					<div className="mt-8 text-center">
-						<Link
-							href="/ubicacion"
-							className="bg-brown-dark text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-brown transition-colors"
-						>
-							Ver más sobre la ubicación
-						</Link>
+						<Button>
+							<Link href="/ubicacion">
+								Ver más sobre la ubicación
+							</Link>
+						</Button>
 					</div>
 				</div>
 			</section>

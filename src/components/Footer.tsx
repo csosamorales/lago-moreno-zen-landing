@@ -9,7 +9,7 @@ export default function Footer() {
 			<div className="max-w-7xl mx-auto py-6 px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
 				{/* Left */}
 				<div className="flex flex-col items-center md:items-start gap-2">
-					<p className="uppercase tracking-widest text-md font-bold">
+					<p className="uppercase tracking-widest text-sm md:text-md font-bold">
 						Ponete en contacto
 					</p>
 					<div className="flex flex-row items-center gap-1 text-brown-dark">
