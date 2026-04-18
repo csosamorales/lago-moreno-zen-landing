@@ -2,8 +2,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { links as externalLinks } from '@/utils/links';
 
-const links = [
+const navLinks = [
 	{ href: '/#departamentos', label: 'Departamentos' },
 	{ href: '/#comodidades', label: 'Comodidades' },
 	{ href: '/ubicacion', label: 'Ubicación' },
@@ -46,7 +47,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 
 				{/* Desktop links */}
 				<div className="hidden md:flex items-center gap-8">
-					{links.map((l) => (
+					{navLinks.map((l) => (
 						<Link
 							key={l.href}
 							href={l.href}
@@ -56,7 +57,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						</Link>
 					))}
 					<a
-						href="https://wa.me/5492944428762"
+						href={externalLinks.whatsapp}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="border border-driftwood text-dawn-pink hover:bg-driftwood hover:text-marlin uppercase font-bold px-4 py-1.5 text-sm tracking-wide transition-colors"
@@ -80,7 +81,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 			{/* Mobile menu */}
 			{menuOpen && (
 				<div className="md:hidden bg-brown-dark border-t border-white/10 px-6 py-4 flex flex-col gap-4">
-					{links.map((l) => (
+					{navLinks.map((l) => (
 						<Link
 							key={l.href}
 							href={l.href}
@@ -91,7 +92,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						</Link>
 					))}
 					<a
-						href="https://wa.me/5492944428762"
+						href={externalLinks.whatsapp}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="border border-gold text-dawn-pink uppercase px-4 py-2 text-sm tracking-wide text-center"

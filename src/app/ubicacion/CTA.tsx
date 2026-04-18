@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui';
+import { links } from '@/utils/links';
 
 export default function CTA() {
 	return (
@@ -13,7 +14,7 @@ export default function CTA() {
 
 			<Button>
 				<a
-					href="https://wa.me/message/S34MCDTW3AQXI1"
+					href={links.whatsappCta}
 					target="_blank"
 					rel="noopener noreferrer"
 				>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FaWhatsapp } from 'react-icons/fa6';
 import { FaFacebookF } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa6';
+import { links } from '@/utils/links';
 
 export default function Footer() {
 	return (
@@ -15,7 +16,7 @@ export default function Footer() {
 					<div className="flex flex-row items-center gap-1 text-brown-dark">
 						<FaWhatsapp size={20} />
 						<a
-							href="https://wa.me/5492944428762"
+							href={links.whatsapp}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-lg transition-colors"

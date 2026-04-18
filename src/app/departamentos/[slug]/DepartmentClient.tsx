@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { whatsappApartmentLink } from '@/utils/links';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Carousel from '@/components/Carousel';
@@ -221,7 +222,7 @@ export default function DepartmentClient({
 									Consultar por Email
 								</button>
 								<a
-									href={`https://wa.me/5492944428762?text=Hola! Me interesa el departamento ${apartment.name}`}
+									href={whatsappApartmentLink(apartment.name)}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="block w-full border border-brown-dark text-brown-dark text-center py-3 text-xs uppercase tracking-widest hover:bg-brown-dark hover:text-white transition-colors"

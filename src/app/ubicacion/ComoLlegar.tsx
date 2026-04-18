@@ -1,5 +1,6 @@
 import { Highlight, SectionLabel } from '@/components';
 import React from 'react';
+import { links } from '@/utils/links';
 
 interface TransportCardProps {
 	title: string;
@@ -91,7 +92,7 @@ export default function ComoLlegar() {
 							horarios{' '}
 							<Highlight>
 								<a
-									href="https://bariloche.org/horario-omnibus-linea-72/"
+									href={links.busTimetable}
 									target="_blank"
 									rel="noopener noreferrer"
 								>

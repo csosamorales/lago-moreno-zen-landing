@@ -1,5 +1,6 @@
 import { SectionLabel } from '@/components';
 import React from 'react';
+import { links } from '@/utils/links';
 
 interface RecursoCardProps {
 	category: string;
@@ -77,7 +78,7 @@ const recursos: RecursoCardProps[] = [
 			'Ski travesía',
 		],
 		linkLabel: 'Sitio oficial',
-		href: 'https://nahuelhuapi.gov.ar/',
+		href: links.nahuelHuapi,
 	},
 	{
 		category: 'Bariloche Turismo Oficial',
@@ -92,7 +93,7 @@ const recursos: RecursoCardProps[] = [
 			'Lagos y playas',
 		],
 		linkLabel: 'Ver actividades',
-		href: 'https://barilocheturismo.gob.ar/',
+		href: links.barilocheTurismo,
 	},
 	{
 		category: 'Bariloche Trekking',
@@ -101,7 +102,7 @@ const recursos: RecursoCardProps[] = [
 			'Desde caminatas suaves para toda la familia hasta travesías de alta montaña. Acceso al Refugio López, Cerro Tronador, Laguna Negra y decenas de senderos con guías habilitados.',
 		tags: ['Senderos', 'Alta montaña', 'Refugios', 'Guías', 'Travesías'],
 		linkLabel: 'Ver rutas',
-		href: 'https://www.clubandino.org/',
+		href: links.clubAndino,
 	},
 ];
 

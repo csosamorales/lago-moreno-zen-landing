@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { links } from '@/utils/links';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SectionLabel from '@/components/SectionLabel';
@@ -108,7 +109,7 @@ export default function HomePage() {
 						</Button>
 						<Button variant="outline">
 							<a
-								href="https://wa.me/5492944428762"
+								href={links.whatsapp}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
