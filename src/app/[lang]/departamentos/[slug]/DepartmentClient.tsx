@@ -12,15 +12,11 @@ import type { Apartment } from '@/data/apartments';
 import { useLanguage } from '@/context/LanguageContext';
 import { whatsappApartmentLink } from '@/utils/links';
 
-export default function DepartmentClient({
-	apartment,
-}: {
-	apartment: Apartment;
-}) {
+export default function DepartmentClient({ apartment }: { apartment: Apartment }) {
 	const [lightboxOpen, setLightboxOpen] = useState(false);
 	const [lightboxIndex, setLightboxIndex] = useState(0);
 	const [galleryOpen, setGalleryOpen] = useState(false);
-	const { t } = useLanguage();
+	const { t, lang } = useLanguage();
 
 	const aptText = t.apartmentsData[apartment.slug];
 
@@ -36,11 +32,11 @@ export default function DepartmentClient({
 			{/* Breadcrumb */}
 			<div className="bg-beige pt-16">
 				<div className="max-w-7xl mx-auto px-6 py-3 text-xs text-ink/50 flex gap-2 items-center">
-					<Link href="/" className="hover:text-gold">
+					<Link href={`/${lang}`} className="hover:text-gold">
 						{t.apartmentDetail.breadcrumbHome}
 					</Link>
 					<span>/</span>
-					<Link href="/#departamentos" className="hover:text-gold">
+					<Link href={`/${lang}#departamentos`} className="hover:text-gold">
 						{t.apartmentDetail.breadcrumbDepartments}
 					</Link>
 					<span>/</span>
@@ -55,7 +51,6 @@ export default function DepartmentClient({
 				onGalleryOpen={() => setGalleryOpen(true)}
 			/>
 
-			{/* Lightbox */}
 			{lightboxOpen && (
 				<Lightbox
 					slides={aptText.images}
@@ -65,7 +60,6 @@ export default function DepartmentClient({
 				/>
 			)}
 
-			{/* Gallery Modal */}
 			{galleryOpen && (
 				<GalleryModal
 					slides={aptText.images}
@@ -86,38 +80,24 @@ export default function DepartmentClient({
 						<span className="uppercase tracking-widest text-xxs font-bold text-gold">
 							{aptText.badge}
 						</span>
-						<h1 className="text-3xl font-semibold text-ink mt-1 mb-2">
-							{apartment.name}
-						</h1>
-						{/* Stars */}
+						<h1 className="text-3xl font-semibold text-ink mt-1 mb-2">{apartment.name}</h1>
 						<div className="flex gap-1 mb-2">
 							{[...Array(5)].map((_, i) => (
-								<span key={i} className="text-gold text-sm">
-									★
-								</span>
+								<span key={i} className="text-gold text-sm">★</span>
 							))}
 						</div>
-						<p className="text-ink/60 text-sm mb-6">
-							{t.apartmentDetail.address}
-						</p>
+						<p className="text-ink/60 text-sm mb-6">{t.apartmentDetail.address}</p>
 						<p className="text-xs text-ink/50 mb-6 flex gap-4">
 							<span>{apartment.specs.guests} {t.apartmentDetail.guestUnit}</span>
 							<span>{apartment.specs.beds} {t.apartmentDetail.bedUnit}</span>
 							<span>
 								{apartment.specs.baths}{' '}
-								{apartment.specs.baths > 1
-									? t.apartmentDetail.bathsUnit
-									: t.apartmentDetail.bathUnit}
+								{apartment.specs.baths > 1 ? t.apartmentDetail.bathsUnit : t.apartmentDetail.bathUnit}
 							</span>
 						</p>
 
 						{aptText.description.map((p, i) => (
-							<p
-								key={i}
-								className="text-ink/80 text-sm leading-relaxed mb-4"
-							>
-								{p}
-							</p>
+							<p key={i} className="text-ink/80 text-sm leading-relaxed mb-4">{p}</p>
 						))}
 
 						<hr className="border-beige-dark my-8" />
@@ -127,19 +107,12 @@ export default function DepartmentClient({
 							{aptText.amenities.map((group) => (
 								<div key={group.group}>
 									<div className="flex items-center gap-2 mb-2">
-										<span className="text-gold text-xs">
-											{group.icon}
-										</span>
-										<h4 className="text-xs font-bold uppercase tracking-widest text-ink">
-											{group.group}
-										</h4>
+										<span className="text-gold text-xs">{group.icon}</span>
+										<h4 className="text-xs font-bold uppercase tracking-widest text-ink">{group.group}</h4>
 									</div>
 									<ul className="space-y-1">
 										{group.items.map((item) => (
-											<li
-												key={item}
-												className="text-sm text-ink/70 flex items-center gap-2"
-											>
+											<li key={item} className="text-sm text-ink/70 flex items-center gap-2">
 												<span className="w-1 h-1 bg-gold inline-block flex-shrink-0" />
 												{item}
 											</li>
@@ -152,39 +125,29 @@ export default function DepartmentClient({
 
 					{/* Sidebar */}
 					<div className="space-y-6">
-						{/* Calendar */}
 						<div className="bg-beige p-6 sticky top-24">
 							<SectionLabel>{t.apartmentDetail.availabilityLabel}</SectionLabel>
 							<div className="mt-4">
-								<MiniCalendar
-									takenDates={apartment.takenDates}
-								/>
+								<MiniCalendar takenDates={apartment.takenDates} />
 							</div>
 						</div>
 
-						{/* Contact form */}
 						<div className="bg-beige p-6">
 							<SectionLabel>{t.apartmentDetail.contactLabel}</SectionLabel>
-							<form
-								className="mt-4 space-y-3"
-								onSubmit={(e) => e.preventDefault()}
-							>
+							<form className="mt-4 space-y-3" onSubmit={(e) => e.preventDefault()}>
 								<input
-									required
-									type="email"
+									required type="email"
 									placeholder={t.apartmentDetail.emailPlaceholder}
 									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
 								/>
 								<div className="grid grid-cols-2 gap-3">
 									<input
-										required
-										type="text"
+										required type="text"
 										placeholder={t.apartmentDetail.namePlaceholder}
 										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
 									/>
 									<input
-										required
-										type="text"
+										required type="text"
 										placeholder={t.apartmentDetail.lastNamePlaceholder}
 										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
 									/>
@@ -195,23 +158,17 @@ export default function DepartmentClient({
 									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
 								/>
 								<input
-									required
-									type="number"
-									min={1}
+									required type="number" min={1}
 									placeholder={t.apartmentDetail.guestsPlaceholder}
 									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
 								/>
 								<div className="grid grid-cols-2 gap-3">
 									<input
-										required
-										type="date"
-										placeholder={t.apartmentDetail.checkInPlaceholder}
+										required type="date"
 										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink focus:outline-none focus:border-gold"
 									/>
 									<input
-										required
-										type="date"
-										placeholder={t.apartmentDetail.checkOutPlaceholder}
+										required type="date"
 										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink focus:outline-none focus:border-gold"
 									/>
 								</div>

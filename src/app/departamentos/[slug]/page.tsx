@@ -1,13 +1,5 @@
-import { notFound } from 'next/navigation'
-import { apartments, getApartment } from '@/data/apartments'
-import DepartmentClient from './DepartmentClient'
+import { redirect } from 'next/navigation'
 
-export function generateStaticParams() {
-  return apartments.map((a) => ({ slug: a.slug }))
-}
-
-export default function DepartmentPage({ params }: { params: { slug: string } }) {
-  const apt = getApartment(params.slug)
-  if (!apt) notFound()
-  return <DepartmentClient apartment={apt} />
+export default function DepartmentRedirect({ params }: { params: { slug: string } }) {
+  redirect(`/es/departamentos/${params.slug}`)
 }

@@ -1,17 +1,21 @@
+'use client';
 import Image from 'next/image';
 import { FaWhatsapp } from 'react-icons/fa6';
 import { FaFacebookF } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa6';
 import { links } from '@/utils/links';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+	const { t } = useLanguage();
+
 	return (
 		<footer className="bg-surface text-black">
 			<div className="max-w-7xl mx-auto py-6 px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
 				{/* Left */}
 				<div className="flex flex-col items-center md:items-start gap-2">
 					<p className="uppercase tracking-widest text-sm md:text-md font-bold">
-						Ponete en contacto
+						{t.footer.contact}
 					</p>
 					<div className="flex flex-row items-center gap-1 text-brown-dark">
 						<FaWhatsapp size={20} />
@@ -39,7 +43,7 @@ export default function Footer() {
 				{/* Right */}
 				<div className="flex flex-col items-center md:items-end gap-2">
 					<p className="uppercase tracking-widest text-md font-bold">
-						Seguinos!
+						{t.footer.follow}
 					</p>
 					<div className="flex gap-4 text-brown-dark">
 						<a href="#" aria-label="Facebook">
@@ -53,8 +57,7 @@ export default function Footer() {
 			</div>
 
 			<div className="border-t border-gold/30 max-w-7xl mx-auto px-6 py-4 text-center text-xs">
-				© {new Date().getFullYear()} Lago Moreno Zen. Todos los derechos
-				reservados.
+				© {new Date().getFullYear()} {t.footer.rights}
 			</div>
 		</footer>
 	);

@@ -2,24 +2,21 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 import { links as externalLinks } from '@/utils/links';
-
-const navLinks = [
-	{ href: '/#departamentos', label: 'Departamentos' },
-	{ href: '/#comodidades', label: 'Comodidades' },
-	{ href: '/ubicacion', label: 'Ubicación' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar({ solid = false }: { solid?: boolean }) {
 	const [scrolled, setScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
+	const { lang, t } = useLanguage();
+	const router = useRouter();
+	const pathname = usePathname();
 
 	useEffect(() => {
 		if (solid) return;
-		console.log('window.scrollY > 40', window.scrollY > 40);
 		const handler = () => setScrolled(window.scrollY > 40);
 		window.addEventListener('scroll', handler);
-
 		return () => window.removeEventListener('scroll', handler);
 	}, [solid]);
 
@@ -27,16 +24,25 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 		return solid || scrolled ? 'bg-oil/90' : 'bg-transparent';
 	}, [solid, scrolled]);
 
+	const navLinks = [
+		{ href: `/${lang}#departamentos`, label: t.nav.departments },
+		{ href: `/${lang}#comodidades`, label: t.nav.amenities },
+		{ href: `/${lang}/ubicacion`, label: t.nav.location },
+	];
+
+	const toggleLang = () => {
+		const newLang = lang === 'es' ? 'en' : 'es';
+		const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
+		router.push(newPath);
+	};
+
 	return (
 		<nav
 			className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${bg}`}
 		>
 			<div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 				{/* Logo */}
-				<Link
-					href="/"
-					className="text-white font-bold tracking-widest text-sm"
-				>
+				<Link href={`/${lang}`} className="text-white font-bold tracking-widest text-sm">
 					<Image
 						src="/logo-moreno-blanco.webp"
 						alt="Logo Lago Moreno Zen"
@@ -62,8 +68,14 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						rel="noopener noreferrer"
 						className="border border-driftwood text-dawn-pink hover:bg-driftwood hover:text-marlin uppercase font-bold px-4 py-1.5 text-sm tracking-wide transition-colors"
 					>
-						Reservar
+						{t.nav.book}
 					</a>
+					<button
+						onClick={toggleLang}
+						className="text-dawn-pink/60 hover:text-dawn-pink uppercase font-bold text-xs tracking-widest transition-colors"
+					>
+						{lang === 'es' ? 'EN' : 'ES'}
+					</button>
 				</div>
 
 				{/* Hamburger */}
@@ -97,8 +109,14 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						rel="noopener noreferrer"
 						className="border border-gold text-dawn-pink uppercase px-4 py-2 text-sm tracking-wide text-center"
 					>
-						Reservar
+						{t.nav.book}
 					</a>
+					<button
+						onClick={toggleLang}
+						className="text-dawn-pink/60 hover:text-dawn-pink uppercase font-bold text-xs tracking-widest text-left transition-colors"
+					>
+						{lang === 'es' ? 'EN' : 'ES'}
+					</button>
 				</div>
 			)}
 		</nav>

@@ -1,6 +1,7 @@
+'use client';
 import { SectionLabel } from '@/components';
 import React from 'react';
-import { links } from '@/utils/links';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface RecursoCardProps {
 	category: string;
@@ -21,25 +22,18 @@ function RecursoCard({
 }: RecursoCardProps) {
 	return (
 		<div className="flex flex-col gap-4 border-t border-whiskey-dark pt-6">
-			{/* Category label */}
 			<p className="font-raleway text-[10px] font-semibold uppercase tracking-[1.8px] text-whiskey-dark">
 				{category}
 			</p>
-
-			{/* Title */}
 			<h3 className="font-raleway text-[15px] font-bold leading-snug text-oil">
 				{title}
 			</h3>
-
-			{/* Description */}
 			<p
 				className="font-raleway text-[13px] leading-[1.8] text-oil"
 				style={{ opacity: 0.72 }}
 			>
 				{description}
 			</p>
-
-			{/* Tags */}
 			<div className="flex flex-wrap gap-1.5">
 				{tags.map((tag) => (
 					<span
@@ -50,8 +44,6 @@ function RecursoCard({
 					</span>
 				))}
 			</div>
-
-			{/* Link */}
 			<a
 				href={href}
 				target="_blank"
@@ -64,66 +56,25 @@ function RecursoCard({
 	);
 }
 
-const recursos: RecursoCardProps[] = [
-	{
-		category: 'Parque Nacional Nahuel Huapi',
-		title: 'El parque más antiguo de Argentina',
-		description:
-			'Más de 700.000 hectáreas de bosques, lagos, volcanes y glaciares. Ofrece circuitos en auto, trekking, pesca deportiva, paseos lacustres y camping. Nuestros departamentos están dentro de su zona de influencia directa.',
-		tags: [
-			'Trekking',
-			'Camping',
-			'Pesca',
-			'Paseos lacustres',
-			'Ski travesía',
-		],
-		linkLabel: 'Sitio oficial',
-		href: links.nahuelHuapi,
-	},
-	{
-		category: 'Bariloche Turismo Oficial',
-		title: 'Todo lo que podés hacer en Bariloche',
-		description:
-			'Kayak, parapente, rafting, mountain bike, buceo, escalada, pesca, navegación y más. Calendario de eventos, excursiones y guía de gastronomía local incluidos.',
-		tags: [
-			'Aventura',
-			'Gastronomía',
-			'Cultura',
-			'Ski & Nieve',
-			'Lagos y playas',
-		],
-		linkLabel: 'Ver actividades',
-		href: links.barilocheTurismo,
-	},
-	{
-		category: 'Bariloche Trekking',
-		title: 'Senderos y rutas de montaña',
-		description:
-			'Desde caminatas suaves para toda la familia hasta travesías de alta montaña. Acceso al Refugio López, Cerro Tronador, Laguna Negra y decenas de senderos con guías habilitados.',
-		tags: ['Senderos', 'Alta montaña', 'Refugios', 'Guías', 'Travesías'],
-		linkLabel: 'Ver rutas',
-		href: links.clubAndino,
-	},
-];
-
 export default function RecursosPlanificar() {
+	const { t } = useLanguage();
+	const r = t.location.resources;
+
 	return (
 		<section className="bg-dawn-pink px-8 py-20 md:px-8 lg:px-8">
 			<div className="mx-auto max-w-6xl">
-				<SectionLabel>Información útil</SectionLabel>
+				<SectionLabel>{r.sectionLabel}</SectionLabel>
 
-				{/* Heading */}
 				<h2 className="mb-12 font-raleway text-3xl leading-[1.25] tracking-[0.02em] text-oil sm:text-[2.4rem]">
-					<span className="font-light">Recursos para </span>
-					<span className="font-bold">planificar</span>
+					<span className="font-light">{r.headingLight}</span>
+					<span className="font-bold">{r.headingBold}</span>
 					<br />
-					<span className="font-light">tu estadía</span>
+					<span className="font-light">{r.headingLight2}</span>
 				</h2>
 
-				{/* 3-column resource cards */}
 				<div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-					{recursos.map((r) => (
-						<RecursoCard key={r.category} {...r} />
+					{r.items.map((item) => (
+						<RecursoCard key={item.category} {...item} />
 					))}
 				</div>
 			</div>
