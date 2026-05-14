@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import Image from 'next/image';
-import PhotoPlaceholder from './PhotoPlaceholder';
 
 interface LightboxProps {
 	slides: { src: string; label?: string }[];
