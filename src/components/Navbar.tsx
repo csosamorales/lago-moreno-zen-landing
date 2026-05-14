@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { links as externalLinks } from '@/utils/links';
 import { useLanguage } from '@/context/LanguageContext';
+import { TbWorld } from 'react-icons/tb';
 
 export default function Navbar({ solid = false }: { solid?: boolean }) {
 	const [scrolled, setScrolled] = useState(false);
@@ -72,8 +73,9 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 					</a>
 					<button
 						onClick={toggleLang}
-						className="text-dawn-pink/60 hover:text-dawn-pink uppercase font-bold text-xs tracking-widest transition-colors"
+						className="text-dawn-pink/60 flex flex-row items-center gap-1 hover:text-dawn-pink uppercase font-bold text-xs tracking-widest transition-colors"
 					>
+						<TbWorld />
 						{lang === 'es' ? 'EN' : 'ES'}
 					</button>
 				</div>

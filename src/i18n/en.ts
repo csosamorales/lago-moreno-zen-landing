@@ -86,8 +86,8 @@ export const en: Translations = {
     },
   },
   apartmentCard: {
-    viewDetail: 'View details',
-    inquire: 'Inquire →',
+    viewDetail: 'View details →',
+    // inquire: 'Inquire →',
   },
   apartmentDetail: {
     breadcrumbHome: 'Home',
@@ -214,7 +214,7 @@ export const en: Translations = {
       headingLight2: 'from anywhere',
       airport: {
         title: 'From the airport',
-        badge: '~30 min by car',
+        badge: '~45 min by car',
         content: [
           { text: 'The International Airport is located ' },
           { text: '14 km from the city center', highlighted: true },
@@ -338,7 +338,7 @@ export const en: Translations = {
       rows: [
         { place: 'Playa del Viento', distance: '200 m', time: '2 min walk' },
         { place: 'Bariloche City Center', distance: '13 km', time: '15 min drive' },
-        { place: 'International Airport', distance: '27 km', time: '30 min drive' },
+        { place: 'International Airport', distance: '30 km', time: '45 min drive' },
         { place: 'Cerro Otto', distance: '~3 km', time: '5 min drive' },
         { place: 'Cerro Campanario', distance: '4.5 km', time: '8 min drive' },
         { place: 'Circuito Chico (start)', distance: '5 km', time: '10 min drive' },

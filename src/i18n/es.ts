@@ -86,8 +86,8 @@ export const es: Translations = {
     },
   },
   apartmentCard: {
-    viewDetail: 'Ver detalle',
-    inquire: 'Consultar →',
+    viewDetail: 'Ver detalle →',
+    // inquire: 'Consultar →',
   },
   apartmentDetail: {
     breadcrumbHome: 'Inicio',
@@ -214,7 +214,7 @@ export const es: Translations = {
       headingLight2: 'desde cualquier punto',
       airport: {
         title: 'Desde el aeropuerto',
-        badge: '~30 min en auto',
+        badge: '~45 min en auto',
         content: [
           { text: 'El Aeropuerto Internacional se encuentra a ' },
           { text: '14 km del centro', highlighted: true },
@@ -338,7 +338,7 @@ export const es: Translations = {
       rows: [
         { place: 'Playa del Viento', distance: '200 m', time: '2 min a pie' },
         { place: 'Centro de Bariloche', distance: '13 km', time: '15 min en auto' },
-        { place: 'Aeropuerto Internacional', distance: '27 km', time: '30 min en auto' },
+        { place: 'Aeropuerto Internacional', distance: '30 km', time: '45 min en auto' },
         { place: 'Cerro Otto', distance: '~3 km', time: '5 min en auto' },
         { place: 'Cerro Campanario', distance: '4.5 km', time: '8 min en auto' },
         { place: 'Circuito Chico (inicio)', distance: '5 km', time: '10 min en auto' },

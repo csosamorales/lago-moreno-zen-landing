@@ -77,7 +77,7 @@ export interface Translations {
   }
   apartmentCard: {
     viewDetail: string
-    inquire: string
+    // inquire: string
   }
   apartmentDetail: {
     breadcrumbHome: string
