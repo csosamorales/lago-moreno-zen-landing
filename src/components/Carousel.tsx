@@ -75,7 +75,7 @@ export default function Carousel({
 				›
 			</button>
 
-			<div className="absolute bottom-6 flex flex-col px-4 gap-5 items-center  w-lvw">
+			<div className="absolute bottom-6 flex flex-col px-4 gap-5 items-center w-full max-w-7xl">
 				<div className="flex flex-row justify-between w-full">
 					{/* Counter */}
 					<div className="text-white/70 text-xs">

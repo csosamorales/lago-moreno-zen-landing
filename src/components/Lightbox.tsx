@@ -94,10 +94,17 @@ export default function Lightbox({
 							onClick={() => onNavigate(i)}
 							className={`flex-shrink-0 w-16 h-12 border-2 transition-colors ${i === index ? 'border-gold' : 'border-transparent'}`}
 						>
-							<PhotoPlaceholder
+							<Image
+								src={s.src}
+								alt={s.label ?? ''}
+								className="w-full h-full"
+								width={60}
+								height={40}
+							/>
+							{/* <PhotoPlaceholder
 								className="w-full h-full"
 								label=""
-							/>
+							/> */}
 						</button>
 					))}
 				</div>
