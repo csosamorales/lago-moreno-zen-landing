@@ -58,7 +58,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						<Link
 							key={l.href}
 							href={l.href}
-							className="text-dawn-pink/80 uppercase hover:text-whiskey hover:underline-offset-1 font-bold text-sm tracking-wide transition-colors"
+							className="text-dawn-pink/80 uppercase hover:text-whiskey hover:underline-offset-1 font-bold text-xs tracking-wide transition-colors"
 						>
 							{l.label}
 						</Link>
@@ -67,7 +67,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						href={externalLinks.whatsapp}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="border border-driftwood text-dawn-pink hover:bg-driftwood hover:text-marlin uppercase font-bold px-4 py-1.5 text-sm tracking-wide transition-colors"
+						className="border border-driftwood text-dawn-pink hover:bg-driftwood hover:text-marlin uppercase font-bold px-4 py-1.5 text-xs tracking-wide transition-colors"
 					>
 						{t.nav.book}
 					</a>
@@ -99,7 +99,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 						<Link
 							key={l.href}
 							href={l.href}
-							className="text-dawn-pink/80 uppercase hover:text-white text-sm tracking-wide"
+							className="text-dawn-pink/80 uppercase hover:text-white text-xs tracking-wide"
 							onClick={() => setMenuOpen(false)}
 						>
 							{l.label}

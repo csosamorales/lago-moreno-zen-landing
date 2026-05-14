@@ -43,7 +43,7 @@ export default function Carousel({
 	};
 
 	return (
-		<div className="relative w-full h-[580px] bg-brown-dark overflow-hidden select-none">
+		<div className="relative w-full h-[580px] max-w-7xl mx-auto bg-brown-dark overflow-hidden select-none">
 			{/* Slide */}
 			<div
 				className="w-full h-full cursor-pointer"
