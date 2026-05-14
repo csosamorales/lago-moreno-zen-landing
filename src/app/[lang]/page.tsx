@@ -13,7 +13,7 @@ import { useLanguage } from '@/context/LanguageContext';
 const apartmentSlugs: Array<{
 	slug: string;
 	name: string;
-	src?: string;
+	src: string;
 	variant: 'featured' | 'normal' | 'horizontal';
 }> = [
 	{
@@ -28,8 +28,18 @@ const apartmentSlugs: Array<{
 		variant: 'featured',
 		src: '/apartments/zen-2/IMG_9123.webp',
 	},
-	{ slug: 'zen-iii', name: 'ZEN III', variant: 'normal' },
-	{ slug: 'mono-zen', name: 'MONO ZEN', variant: 'horizontal' },
+	{
+		slug: 'zen-iii',
+		name: 'ZEN III',
+		variant: 'normal',
+		src: '/apartments/zen-3/IMG_9145.webp',
+	},
+	{
+		slug: 'mono-zen',
+		name: 'MONO ZEN',
+		variant: 'horizontal',
+		src: '/apartments/mono/5c58bbb9-5a2c-4d6a-95ca-30eb764af50f.webp',
+	},
 	// { slug: 'zen-iv', name: 'ZEN IV', variant: 'horizontal' },
 ];
 

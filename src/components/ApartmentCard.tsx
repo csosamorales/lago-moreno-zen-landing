@@ -91,7 +91,7 @@ export default function ApartmentCard({
 						src={src}
 						width={500}
 						height={500}
-						className="w-full md:w-1/2 min-h-[280px]"
+						className="w-full md:w-1/2 max-h-80 object-cover object-center"
 					/>
 				) : (
 					<PhotoPlaceholder className="w-full md:w-1/2 min-h-[280px]" />
