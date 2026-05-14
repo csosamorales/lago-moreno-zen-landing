@@ -13,22 +13,34 @@ import { useLanguage } from '@/context/LanguageContext';
 const apartmentSlugs: Array<{
 	slug: string;
 	name: string;
+	src?: string;
 	variant: 'featured' | 'normal' | 'horizontal';
 }> = [
-	{ slug: 'zen-i', name: 'ZEN I', variant: 'featured' },
-	{ slug: 'zen-ii', name: 'ZEN II', variant: 'normal' },
+	{
+		slug: 'zen-i',
+		name: 'ZEN I',
+		variant: 'horizontal',
+		src: '/apartments/zen-1/IMG_3272.webp',
+	},
+	{
+		slug: 'zen-ii',
+		name: 'ZEN II',
+		variant: 'featured',
+		src: '/apartments/zen-2/IMG_9123.webp',
+	},
 	{ slug: 'zen-iii', name: 'ZEN III', variant: 'normal' },
-	{ slug: 'mono-zen', name: 'MONO ZEN', variant: 'featured' },
-	{ slug: 'zen-iv', name: 'ZEN IV', variant: 'horizontal' },
+	{ slug: 'mono-zen', name: 'MONO ZEN', variant: 'horizontal' },
+	// { slug: 'zen-iv', name: 'ZEN IV', variant: 'horizontal' },
 ];
 
 export default function HomePage() {
 	const { t, lang } = useLanguage();
 
-	const apartments = apartmentSlugs.map(({ slug, name, variant }) => ({
+	const apartments = apartmentSlugs.map(({ slug, name, variant, src }) => ({
 		slug,
 		name,
 		variant,
+		src,
 		...t.home.apartments.cards[slug],
 	}));
 
@@ -68,7 +80,7 @@ export default function HomePage() {
 						<Button>
 							<a href="#departamentos">{t.home.hero.ctaView}</a>
 						</Button>
-						<Button variant="outline">
+						<Button variant="outline" intent="secondary">
 							<a
 								href={links.whatsapp}
 								target="_blank"
@@ -86,11 +98,15 @@ export default function HomePage() {
 				<div className="max-w-5xl mx-auto px-6">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
 						<div>
-							<SectionLabel>{t.home.apartments.label}</SectionLabel>
+							<SectionLabel>
+								{t.home.apartments.label}
+							</SectionLabel>
 							<h2 className="text-3xl md:text-4xl font-light text-ink leading-snug mt-2">
 								{t.home.apartments.headingLight}
 								<br />
-								<span className="font-bold">{t.home.apartments.headingBold}</span>
+								<span className="font-bold">
+									{t.home.apartments.headingBold}
+								</span>
 							</h2>
 						</div>
 						<div className="flex items-end">
@@ -101,16 +117,19 @@ export default function HomePage() {
 					</div>
 
 					<div className="flex flex-col gap-[2px]">
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+						<div className="grid grid-cols-1 gap-[2px]">
 							<ApartmentCard {...apartments[0]} />
-							<ApartmentCard {...apartments[1]} />
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+							<ApartmentCard {...apartments[1]} />
+							<ApartmentCard {...apartments[2]} />
+						</div>
+						{/* <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
 							<ApartmentCard {...apartments[2]} />
 							<ApartmentCard {...apartments[3]} />
-						</div>
+						</div> */}
 						<div className="grid grid-cols-1 gap-[2px]">
-							<ApartmentCard {...apartments[4]} />
+							<ApartmentCard {...apartments[3]} />
 						</div>
 					</div>
 				</div>
@@ -121,9 +140,16 @@ export default function HomePage() {
 				<div className="max-w-7xl mx-auto px-6">
 					<div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
 						{t.home.features.map((f) => (
-							<div key={f.title} className="px-8 py-10 text-center">
-								<h3 className="text-white font-semibold mb-3">{f.title}</h3>
-								<p className="text-white/60 text-sm leading-relaxed">{f.text}</p>
+							<div
+								key={f.title}
+								className="px-8 py-10 text-center"
+							>
+								<h3 className="text-white font-semibold mb-3">
+									{f.title}
+								</h3>
+								<p className="text-white/60 text-sm leading-relaxed">
+									{f.text}
+								</p>
 							</div>
 						))}
 					</div>
@@ -132,12 +158,14 @@ export default function HomePage() {
 
 			{/* TESTIMONIAL */}
 			<section className="bg-beige py-16 text-center">
-				<div className="max-w-2xl mx-auto px-6">
+				<div className="max-w-7xl mx-auto px-6">
 					<SectionLabel>{t.home.testimonial.label}</SectionLabel>
 					<blockquote className="text-ink text-xl md:text-2xl font-light italic mt-6 leading-relaxed">
 						{t.home.testimonial.quote}
 					</blockquote>
-					<p className="text-ink/50 text-xs mt-4">{t.home.testimonial.author}</p>
+					<p className="text-ink/50 text-xs mt-4">
+						{t.home.testimonial.author}
+					</p>
 				</div>
 			</section>
 
@@ -145,7 +173,9 @@ export default function HomePage() {
 			<section id="ubicacion" className="bg-cream py-16">
 				<div className="max-w-7xl mx-auto px-6">
 					<div className="max-w-3xl mb-10">
-						<SectionLabel>{t.home.locationSection.label}</SectionLabel>
+						<SectionLabel>
+							{t.home.locationSection.label}
+						</SectionLabel>
 						<h2 className="text-2xl md:text-3xl font-light text-ink mt-2 leading-snug">
 							{t.home.locationSection.headingLight}{' '}
 							<span className="text-ink/60 text-xl">
