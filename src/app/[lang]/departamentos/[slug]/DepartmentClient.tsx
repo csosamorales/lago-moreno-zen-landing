@@ -42,7 +42,7 @@ export default function DepartmentClient({
 	}, [apartment.slug]);
 
 	const aptText = t.apartmentsData[apartment.slug];
-	const slides = images.map((src) => ({ src }));
+	const slides = images.map((src) => ({ src, alt: apartment.name }));
 
 	const openLightbox = (i: number) => {
 		setLightboxIndex(i);

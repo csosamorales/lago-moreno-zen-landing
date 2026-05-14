@@ -50,12 +50,12 @@ export const es: Translations = {
           specs: '2 personas · Estudio · 1 baño',
           amenities: ['WiFi', 'TV LED', 'Diseño moderno'],
         },
-        'zen-iv': {
-          badge: 'Departamento superior',
-          description: 'Nuestro departamento más grande, con amplio living, dos habitaciones y una terraza panorámica con vistas inigualables al lago y los cerros.',
-          specs: '6 personas · 2 hab · 2 baños',
-          amenities: ['WiFi', 'TV LED', 'Terraza panorámica', 'Doble baño', 'Calefacción central'],
-        },
+        // 'zen-iv': {
+        //   badge: 'Departamento superior',
+        //   description: 'Nuestro departamento más grande, con amplio living, dos habitaciones y una terraza panorámica con vistas inigualables al lago y los cerros.',
+        //   specs: '6 personas · 2 hab · 2 baños',
+        //   amenities: ['WiFi', 'TV LED', 'Terraza panorámica', 'Doble baño', 'Calefacción central'],
+        // },
       },
     },
     features: [
@@ -179,25 +179,25 @@ export const es: Translations = {
       ],
       images: [{ label: 'Ambiente principal' }, { label: 'Cocina' }, { label: 'Baño' }, { label: 'Vista exterior' }],
     },
-    'zen-iv': {
-      badge: 'Departamento superior',
-      description: [
-        'ZEN IV es nuestra joya: el departamento más grande y completo del complejo. Con dos habitaciones, dos baños y una terraza panorámica que ofrece una vista privilegiada al lago y los cerros nevados.',
-        'Diseñado para grupos grandes o familias que no quieren sacrificar comodidad. El living es espacioso, la cocina está totalmente equipada y el equipamiento general es de primer nivel.',
-      ],
-      amenities: [
-        { group: 'General', icon: '◈', items: ['WiFi', 'Calefacción central', 'Ropa de cama premium', 'Toallas'] },
-        { group: 'Cocina', icon: '◈', items: ['Heladera grande', 'Microondas', 'Horno', 'Vajilla completa'] },
-        { group: 'Habitación', icon: '◈', items: ['2 habitaciones', 'Cama matrimonial + twin', 'Placards amplios'] },
-        { group: 'Baño', icon: '◈', items: ['2 baños completos', 'Agua caliente garantizada'] },
-        { group: 'Living', icon: '◈', items: ['Living amplio', 'Terraza panorámica', 'Mesa de comedor grande'] },
-        { group: 'Entretenimiento', icon: '◈', items: ['TV LED 50"', 'Netflix', 'Parlante bluetooth'] },
-      ],
-      images: [
-        { label: 'Terraza panorámica' }, { label: 'Living' }, { label: 'Habitación principal' },
-        { label: 'Habitación secundaria' }, { label: 'Cocina' }, { label: 'Vista al lago' },
-      ],
-    },
+    // 'zen-iv': {
+    //   badge: 'Departamento superior',
+    //   description: [
+    //     'ZEN IV es nuestra joya: el departamento más grande y completo del complejo. Con dos habitaciones, dos baños y una terraza panorámica que ofrece una vista privilegiada al lago y los cerros nevados.',
+    //     'Diseñado para grupos grandes o familias que no quieren sacrificar comodidad. El living es espacioso, la cocina está totalmente equipada y el equipamiento general es de primer nivel.',
+    //   ],
+    //   amenities: [
+    //     { group: 'General', icon: '◈', items: ['WiFi', 'Calefacción central', 'Ropa de cama premium', 'Toallas'] },
+    //     { group: 'Cocina', icon: '◈', items: ['Heladera grande', 'Microondas', 'Horno', 'Vajilla completa'] },
+    //     { group: 'Habitación', icon: '◈', items: ['2 habitaciones', 'Cama matrimonial + twin', 'Placards amplios'] },
+    //     { group: 'Baño', icon: '◈', items: ['2 baños completos', 'Agua caliente garantizada'] },
+    //     { group: 'Living', icon: '◈', items: ['Living amplio', 'Terraza panorámica', 'Mesa de comedor grande'] },
+    //     { group: 'Entretenimiento', icon: '◈', items: ['TV LED 50"', 'Netflix', 'Parlante bluetooth'] },
+    //   ],
+    //   images: [
+    //     { label: 'Terraza panorámica' }, { label: 'Living' }, { label: 'Habitación principal' },
+    //     { label: 'Habitación secundaria' }, { label: 'Cocina' }, { label: 'Vista al lago' },
+    //   ],
+    // },
   },
   location: {
     hero: {

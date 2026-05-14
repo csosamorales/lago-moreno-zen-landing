@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { RiExpandDiagonalLine } from 'react-icons/ri';
 import { Button } from './ui';
@@ -17,17 +17,30 @@ export default function Carousel({
 	onGalleryOpen,
 }: CarouselProps) {
 	const [current, setCurrent] = useState(0);
+	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-	useEffect(() => {
-		const t = setInterval(() => {
+	const resetInterval = () => {
+		if (intervalRef.current) clearInterval(intervalRef.current);
+		intervalRef.current = setInterval(() => {
 			setCurrent((c) => (c + 1) % slides.length);
 		}, 5000);
-		return () => clearInterval(t);
+	};
+
+	useEffect(() => {
+		resetInterval();
+		return () => {
+			if (intervalRef.current) clearInterval(intervalRef.current);
+		};
 	}, [slides.length]);
 
-	const prev = () =>
+	const prev = () => {
 		setCurrent((c) => (c - 1 + slides.length) % slides.length);
-	const next = () => setCurrent((c) => (c + 1) % slides.length);
+		resetInterval();
+	};
+	const next = () => {
+		setCurrent((c) => (c + 1) % slides.length);
+		resetInterval();
+	};
 
 	return (
 		<div className="relative w-full h-[580px] bg-brown-dark overflow-hidden select-none">
@@ -90,7 +103,6 @@ export default function Carousel({
 					{onGalleryOpen && (
 						<Button
 							onClick={onGalleryOpen}
-							variant="outline"
 							className="text-xxs !py-2 !px-4"
 							leftIcon={<GrGallery />}
 						>
