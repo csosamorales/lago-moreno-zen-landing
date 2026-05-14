@@ -120,6 +120,16 @@ export const en: Translations = {
 		bedUnit: 'bed.',
 		bathUnit: 'bath',
 		bathsUnit: 'baths',
+		errorEmailRequired: 'Email is required',
+		errorEmailInvalid: 'Invalid email',
+		errorNameRequired: 'First name is required',
+		errorLastNameRequired: 'Last name is required',
+		errorGuestsRequired: 'Number of guests is required',
+		errorGuestsMin: 'Minimum 1 guest',
+		errorCheckInRequired: 'Check-in date is required',
+		errorCheckInPast: 'Check-in date cannot be in the past',
+		errorCheckOutRequired: 'Check-out date is required',
+		errorCheckOutBeforeCheckIn: 'Check-out date must be after check-in',
 	},
 	apartmentsData: {
 		'zen-i': {

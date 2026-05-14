@@ -69,11 +69,15 @@ export default function ComoLlegar() {
 					<p className="font-raleway text-xs font-medium uppercase tracking-[1.44px] text-whiskey-dark">
 						{h.mapLabel}
 					</p>
-					<img
-						src="https://api.builder.io/api/v1/image/assets/TEMP/402dfce8c288ab741651306efc288ef152bb2dc4?width=988"
-						alt="Mapa de ubicación – Av. Bustillo km 13, Playa del Viento, Bariloche"
-						className="w-full object-cover"
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.3536914112487!2d-71.47185332404788!3d-41.10496597133707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a77c2f784e4c7%3A0xff3fce9af939ef6!2sPlaya%20Del%20Viento!5e0!3m2!1ses!2sar!4v1778791311316!5m2!1ses!2sar"
+						width="100%"
+						className="w-full border-0"
 						style={{ aspectRatio: '4/3' }}
+						allowFullScreen
+						loading="lazy"
+						referrerPolicy="no-referrer-when-downgrade"
+						title="Mapa de ubicación – Av. Bustillo km 13, Playa del Viento, Bariloche"
 					/>
 					<p className="font-raleway text-xs leading-[19.2px] text-oil" style={{ opacity: 0.45 }}>
 						{h.mapCaption.split('\n').map((line, i) => (

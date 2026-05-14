@@ -100,6 +100,16 @@ export interface Translations {
     bedUnit: string
     bathUnit: string
     bathsUnit: string
+    errorEmailRequired: string
+    errorEmailInvalid: string
+    errorNameRequired: string
+    errorLastNameRequired: string
+    errorGuestsRequired: string
+    errorGuestsMin: string
+    errorCheckInRequired: string
+    errorCheckInPast: string
+    errorCheckOutRequired: string
+    errorCheckOutBeforeCheckIn: string
   }
   apartmentsData: Record<string, ApartmentDetailData>
   location: {

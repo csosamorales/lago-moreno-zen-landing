@@ -1,5 +1,5 @@
 export const links = {
-  whatsapp: 'https://wa.me/5492944428762',
+  whatsapp: 'https://wa.me/5492944287452',
   whatsappCta: 'https://wa.me/message/S34MCDTW3AQXI1',
   nahuelHuapi: 'https://nahuelhuapi.gov.ar/',
   barilocheTurismo: 'https://barilocheturismo.gob.ar/',

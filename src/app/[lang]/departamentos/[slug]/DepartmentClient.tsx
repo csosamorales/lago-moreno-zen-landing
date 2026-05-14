@@ -8,12 +8,9 @@ import Lightbox from '@/components/Lightbox';
 import GalleryModal from '@/components/GalleryModal';
 import MiniCalendar from '@/components/MiniCalendar';
 import SectionLabel from '@/components/SectionLabel';
+import ContactForm from '@/components/ContactForm';
 import type { Apartment } from '@/data/apartments';
 import { useLanguage } from '@/context/LanguageContext';
-import { whatsappApartmentLink } from '@/utils/links';
-import { Button } from '@/components/ui';
-import { FaWhatsapp } from 'react-icons/fa6';
-import { MdOutlineEmail } from 'react-icons/md';
 
 export default function DepartmentClient({
 	apartment,
@@ -197,97 +194,10 @@ export default function DepartmentClient({
 							<SectionLabel>
 								{t.apartmentDetail.contactLabel}
 							</SectionLabel>
-							<form
-								className="mt-4 space-y-3"
-								onSubmit={(e) => e.preventDefault()}
-							>
-								<input
-									required
-									type="email"
-									placeholder={
-										t.apartmentDetail.emailPlaceholder
-									}
-									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
-								/>
-								<div className="grid grid-cols-2 gap-3">
-									<input
-										required
-										type="text"
-										placeholder={
-											t.apartmentDetail.namePlaceholder
-										}
-										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
-									/>
-									<input
-										required
-										type="text"
-										placeholder={
-											t.apartmentDetail
-												.lastNamePlaceholder
-										}
-										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
-									/>
-								</div>
-								<input
-									type="tel"
-									placeholder={
-										t.apartmentDetail.phonePlaceholder
-									}
-									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
-								/>
-								<input
-									required
-									type="number"
-									min={1}
-									placeholder={
-										t.apartmentDetail.guestsPlaceholder
-									}
-									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold"
-								/>
-								<div className="grid grid-cols-2 gap-3">
-									<input
-										required
-										type="date"
-										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink focus:outline-none focus:border-gold"
-									/>
-									<input
-										required
-										type="date"
-										className="bg-cream border border-beige-dark px-3 py-2 text-sm text-ink focus:outline-none focus:border-gold"
-									/>
-								</div>
-								<textarea
-									rows={3}
-									placeholder={
-										t.apartmentDetail.messagePlaceholder
-									}
-									className="w-full bg-cream border border-beige-dark px-3 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold resize-none"
-								/>
-								<Button
-									type="submit"
-									className="w-full"
-									leftIcon={<MdOutlineEmail size={24} />}
-									// className="w-full bg-brown-dark text-white py-3 text-xs uppercase tracking-widest hover:bg-brown transition-colors"
-								>
-									{t.apartmentDetail.submitEmail}
-								</Button>
-								<Button
-									variant="outline"
-									className="w-full"
-									leftIcon={<FaWhatsapp size={24} />}
-								>
-									<a
-										href={whatsappApartmentLink(
-											apartment.name,
-										)}
-										target="_blank"
-										rel="noopener noreferrer"
-										// className="block w-full border border-brown-dark text-brown-dark text-center py-3 text-xs uppercase tracking-widest hover:bg-brown-dark hover:text-white transition-colors"
-									>
-										{t.apartmentDetail.submitWhatsapp}
-									</a>
-								</Button>
-							</form>
+							<ContactForm
+								apartmentName={apartment.name}
+								t={t.apartmentDetail}
+							/>
 						</div>
 					</div>
 				</div>
