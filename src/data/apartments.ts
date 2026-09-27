@@ -12,7 +12,6 @@ export interface Apartment {
 	specs: { guests: number; beds: number; baths: number };
 	amenities: Amenity[];
 	images: { label: string }[];
-	takenDates?: string[];
 }
 
 export const apartments: Apartment[] = [
@@ -85,7 +84,6 @@ export const apartments: Apartment[] = [
 			{ label: 'Vista desde la ventana' },
 			{ label: 'Exterior' },
 		],
-		takenDates: ['2025-04-10', '2025-04-11', '2025-04-12', '2025-04-20'],
 	},
 	{
 		slug: 'zen-ii',
@@ -130,7 +128,6 @@ export const apartments: Apartment[] = [
 			{ label: 'Jardín' },
 			{ label: 'Cocina' },
 		],
-		takenDates: [],
 	},
 	{
 		slug: 'zen-iii',
@@ -162,7 +159,6 @@ export const apartments: Apartment[] = [
 			{ label: 'Dormitorio' },
 			{ label: 'Vista al bosque' },
 		],
-		takenDates: [],
 	},
 	{
 		slug: 'mono-zen',
@@ -199,7 +195,6 @@ export const apartments: Apartment[] = [
 			{ label: 'Baño' },
 			{ label: 'Vista exterior' },
 		],
-		takenDates: [],
 	},
 	// {
 	//   slug: 'zen-iv',

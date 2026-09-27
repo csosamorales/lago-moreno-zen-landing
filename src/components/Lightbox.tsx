@@ -68,7 +68,7 @@ export default function Lightbox({
 						src={slides[index].src}
 						alt={slides[index].label ?? ''}
 						fill
-						className="object-cover w-full h-full"
+						className="object-contain w-full h-full"
 						priority={index === 0}
 					/>
 				</div>

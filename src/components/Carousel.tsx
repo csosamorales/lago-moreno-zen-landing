@@ -27,7 +27,7 @@ export default function Carousel({
 	};
 
 	useEffect(() => {
-		resetInterval();
+		// resetInterval();
 		return () => {
 			if (intervalRef.current) clearInterval(intervalRef.current);
 		};
@@ -48,13 +48,13 @@ export default function Carousel({
 			<div
 				className="w-full h-full cursor-pointer"
 				onClick={() => onImageClick?.(current)}
-				title="Clic para ampliar"
+				title="Click para ampliar"
 			>
 				<Image
 					src={slides[current].src}
 					alt={slides[current].label ?? ''}
 					fill
-					className="object-cover"
+					className="object-contain"
 					priority={current === 0}
 				/>
 			</div>
@@ -83,7 +83,7 @@ export default function Carousel({
 					</div>
 					<span className="text-white/50 text-xs uppercase flex flex-row gap-1 items-center font-bold">
 						<RiExpandDiagonalLine size={16} />
-						Clic para ampliar
+						Click para ampliar
 					</span>
 				</div>
 
